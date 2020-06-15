@@ -63,6 +63,9 @@ final class ProgressPrinter {
                     .substring(2)
                     .toLowerCase());
         
+        out.printf("at a net rate of %s MiB/s%n", 
+                rateFmt.format(mbPerSec(prog.getNumBytesRead(), runtimeMillis)));
+        
         long bytesToGo = prog.getNumBytesToRead() - prog.getNumBytesRead();
         double bytesPerMilli = (double)prog.getNumBytesRead()/runtimeMillis;
         double millisToGo = bytesToGo/bytesPerMilli;

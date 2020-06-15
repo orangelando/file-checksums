@@ -77,7 +77,6 @@ public final class WriteChecksumsApp {
             if( upload ) {
                 uploadFtp(encryptedPath, props);
             }
-            
         }
         
         System.out.println("done.");
@@ -109,7 +108,6 @@ public final class WriteChecksumsApp {
         
         return op.getFileChecksums().get();
     }
-
     
     private Path saveChecksums(FileChecksums checksums) throws Exception {
         var mapper = new FSMapper(Paths.get(outputDir));

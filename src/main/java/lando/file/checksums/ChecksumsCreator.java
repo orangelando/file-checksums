@@ -76,6 +76,8 @@ final class ChecksumsCreator {
             });
 
             var whenFinished = ZonedDateTime.now();
+            
+            completed.sort( (a, b) -> a.getFile().compareTo(b.getFile()));
 
             return new FileChecksums(dir, whenStarted, whenFinished, completed);
         });
